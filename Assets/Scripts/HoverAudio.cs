@@ -9,6 +9,7 @@ using Microsoft.MixedReality.Toolkit.Utilities;
 public class HoverAudio : MonoBehaviour
 {
     private ObjectManipulator objectManipulator;
+    private ObjectManipulatorDynamicHover objectManipulatorDynamic;
     private AudioSource audioSource;
     public AudioClip audioClip;
     public GameObject manipulationSourceIndicator;
@@ -16,9 +17,10 @@ public class HoverAudio : MonoBehaviour
     void Awake()
     {
         objectManipulator = GetComponent<ObjectManipulator>();
+        objectManipulatorDynamic = GetComponent<ObjectManipulatorDynamicHover>();
         audioSource = GetComponent<AudioSource>();
 
-        objectManipulator.OnHoverEntered.AddListener(HoverDistance);
+        //objectManipulator.OnHoverEntered.AddListener(HoverDistance);
     }
   
     private void HoverDistance(ManipulationEventData args)
@@ -35,12 +37,23 @@ public class HoverAudio : MonoBehaviour
         Vector3 distance = positionSource - transform.position;
 
         Debug.Log($"the distance between manipulation source and object is {distance.magnitude}");
-        ChangeAudioVolume(distance.magnitude);
+
+        //ChangeAudioVolume(distance.magnitude);
     } 
 
-    private void ChangeAudioVolume(float normalizedDistance)
+    public void ChangeAudioVolume(float normalizedDistance)
     {
-        audioSource.volume = 1-normalizedDistance;
-        audioSource.PlayOneShot(audioClip);
+        float volumeRatio = normalizedDistance/objectManipulatorDynamic.initialHoverDistance.magnitude;
+
+        //audioSource.volume = 1-normalizedDistance;
+        audioSource.volume = volumeRatio;
+        if (audioSource.isPlaying)
+        {
+            return;
+        }
+        else
+        {
+            audioSource.PlayOneShot(audioClip);
+        }
     }
 }

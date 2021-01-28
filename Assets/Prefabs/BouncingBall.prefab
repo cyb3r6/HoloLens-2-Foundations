@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7645955154402803248}
   - component: {fileID: 7645955154402803249}
   - component: {fileID: 8192445069105698482}
+  - component: {fileID: 4866976039333744678}
   - component: {fileID: 3981047704500729732}
   m_Layer: 0
   m_Name: BouncingBall
@@ -145,6 +146,44 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4866976039333744678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7645955154402803250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f421987d7a01ece43826389c9d74aa9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hostTransform: {fileID: 0}
+  manipulationType: 3
+  twoHandedManipulationType: 7
+  allowFarManipulation: 1
+  oneHandRotationModeNear: 1
+  oneHandRotationModeFar: 1
+  releaseBehavior: 3
+  smoothingActive: 1
+  moveLerpTime: 0.001
+  rotateLerpTime: 0.001
+  scaleLerpTime: 0.001
+  onManipulationStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onManipulationEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  onHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  onHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHoverChanged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &3981047704500729732
