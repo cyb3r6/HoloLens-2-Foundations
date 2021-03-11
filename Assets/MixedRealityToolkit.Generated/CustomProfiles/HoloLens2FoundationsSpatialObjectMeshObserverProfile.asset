@@ -23,6 +23,6 @@ MonoBehaviour:
   trianglesPerCubicMeter: 0
   recalculateNormals: 1
   displayOption: 1
-  visibleMaterial: {fileID: 2100000, guid: d44938258c17242468dceb7f49109d9c, type: 2}
+  visibleMaterial: {fileID: 2100000, guid: 3a3a03a9e0a1eb24eb192533df212c4c, type: 2}
   occlusionMaterial: {fileID: 2100000, guid: a809c7ea182b699409443d46d5b42435, type: 2}
   spatialMeshObject: {fileID: 100000, guid: 2d029f2a1321676428ce89872882c605, type: 3}

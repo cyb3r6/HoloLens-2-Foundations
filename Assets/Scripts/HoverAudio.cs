@@ -13,7 +13,7 @@ public class HoverAudio : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip audioClip;
     public GameObject manipulationSourceIndicator;
-    
+    public float tuningRatio = 2f;
     void Awake()
     {
         objectManipulator = GetComponent<ObjectManipulator>();
@@ -45,10 +45,13 @@ public class HoverAudio : MonoBehaviour
     {
         float volumeRatio = normalizedDistance/objectManipulatorDynamic.initialHoverDistance.magnitude;
 
-        //audioSource.volume = 1-normalizedDistance;
-        audioSource.volume = volumeRatio;
-        if (audioSource.isPlaying)
+        float inverseVolumeRatio = (1 - volumeRatio) * tuningRatio;
+
+        audioSource.volume = inverseVolumeRatio;
+
+        if (Mathf.Approximately(inverseVolumeRatio, 0.1f))
         {
+            audioSource.Stop();
             return;
         }
         else

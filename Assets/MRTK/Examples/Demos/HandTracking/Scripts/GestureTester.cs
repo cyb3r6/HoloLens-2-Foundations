@@ -37,6 +37,7 @@ namespace Microsoft.MixedReality.Toolkit.Examples
             var action = eventData.MixedRealityInputAction.Description;
             if (action == "Hold Action")
             {
+                
                 SetIndicator(HoldIndicator, "Hold: started", HoldMaterial);
             }
             else if (action == "Manipulate Action")

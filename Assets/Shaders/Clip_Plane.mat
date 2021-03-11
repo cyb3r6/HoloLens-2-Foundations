@@ -38,4 +38,4 @@ Material:
     - _Metallic: 0
     m_Colors:
     - _PlaneNormal: {r: -1, g: -100, b: -1, a: 1}
-    - _PlanePoint: {r: 1, g: 11.09, b: 1, a: 1}
+    - _PlanePoint: {r: 1, g: 1, b: 1, a: 1}
